@@ -1,0 +1,60 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="audio-wrapper">
+      <button id="playButton" onclick="playAudio()">Play Audio</button>
+      <audio autoplay
+        id="audioPlayer"
+        src="audio/Happy Birthday Song Piano Cover by Seander Alfonsus.mp3"
+      ></audio>
+    </div>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .audio-wrapper {
+        position: relative;
+      }
+
+      #playButton {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        outline: none;
+      }
+
+      #playButton.hide {
+        display: none;
+      }
+    </style>
+    <script>
+      function playAudio() {
+        const audioPlayer = document.getElementById("audioPlayer");
+        const playButton = document.getElementById("playButton");
+
+        // Play the audio
+        audioPlayer.play();
+
+        // Hide the button after audio starts playing
+        playButton.classList.add("hide");
+      }
+    </script>
+  </body>
+</html>
